@@ -4,7 +4,7 @@
 //State Object
 var state = {
     API_KEY: "34d7e857bc1823e8c30763e59dfc71a0",
-    MC_URL: "http://api.meaningcloud.com/sentiment-2.1",
+    MC_URL: "https://api.meaningcloud.com/sentiment-2.1",
     lang: "en",
     model: "general",
     results: ""
