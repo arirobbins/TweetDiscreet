@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tweet Safe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Black+Ops+One|Indie+Flower|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div id="dialog" title="Analysis Results"></div>
+<div class="flex-container">
+    <div class="welcome flex-item">
+        <p> Welcome to <span class="tweet-text">tweet </span><span class="safe-text">Safe!</span> an app that will analyze the sentiment of your tweets and advise you on how they will be received . . . all before you tweet! (click anywhere in the text to start)</p>
+    </div><!--end flex-item-->
+    <div class="tweet-box flex-item hidden">
+        <form action="">
+            <textarea class="tweet-area" rows="5" cols="50" placeholder="This is the text I'm going to tweet, will it be bad or will it be sweet?!"></textarea>
+            <br>
+            <!--<input type="submit" name="submit">-->
+            <button type="submit" id="submit">Evaluate</button>
+            <p class="js-counter"><span id="count">0</span>/140</p>
+            <div id="tweet-btn"></div>
+        </form>
+    </div><!--end flex-item-->
+</div><!--end flex-container-->
+
+
+
+
+<!--<iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true"-->
+        <!--class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button"-->
+        <!--src="http://platform.twitter.com/widgets/tweet_button.3748f7cda49448f6c6f7854238570ba0.en.html#dnt=false&amp;id=twitter-widget-1&amp;lang=en&amp;original_referer=http%3A%2F%2Fflexboxfroggy.com%2F&amp;size=m&amp;text=Flexbox%20Froggy%20-%20A%20game%20for%20learning%20CSS%20flexbox&amp;time=1483156199437&amp;type=share&amp;url=http%3A%2F%2Fflexboxfroggy.com&amp;via=thomashpark"-->
+        <!--data-url="http://flexboxfroggy.com" style="position: static; visibility: visible; width: 61px; height: 20px;"></iframe>-->
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

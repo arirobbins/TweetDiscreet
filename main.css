@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #00aced;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.welcome {
+    font-family: "Indie Flower", cursive;
+    font-size: 40px;
+}
+
+.tweet-text {
+    font-family: "Baloo Thambi", cursive;
+}
+
+.tweet-box {
+    font-family: "Roboto", Arial;
+    font-size: 20px;
+    color: black;
+}
+
+textarea {
+    width: 100%;
+    /*border-radius: .5%;*/
+}
+
+.js-counter {
+    color: white;
+    font-size: 18px;
+    display: inline-block;
+    float: right;
+    margin: 4px;
+}
+
+.red {
+    color: red;
+}
+
+.safe-text {
+    font-family: "Black Ops One", Arial;
+    color: #515346;
+}
+
+.flex-container {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-item {
+    margin: 10px;
+    width: 33.33%;
+}
+
+/*.welcome {*/
+    /*text-align: center;*/
+    /*border: 1px solid black;*/
+    /*height: 65%;*/
+    /*width: 65%;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*margin-top: 50%;*/
+    /*position: relative;*/
+/*}*/
+
+/*input {*/
+    /*height: 200px;*/
+    /*width: 400px;*/
+/*}*/
+
+/*.tweet-box {*/
+    /*height: 200px;*/
+    /*width: 400px;*/
+/*}*/
