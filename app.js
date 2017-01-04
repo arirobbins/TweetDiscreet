@@ -116,43 +116,16 @@ function analyzeData(data){
 
     $("#dialog").html(element);
     callDialog();
-    // callDialogTest();
-    // callPopup();
-}
-
-function callPopup(){
-    $("#dialog").showPopup()
-}
-
-function callDialogTest(){
-    if ($(window).width() < 1224){
-        console.log("mobile");
-    }
-    else {
-        console.log("desktop");
-        $(".tweet-box").addClass("hidden");
-        $(".button-counter").addClass("hidden");
-        createTweetButton()
-        $("#dialog").dialog({
-            modal: true,
-            width: 600,
-            close: CloseFunction,
-            overlay: {
-                opacity: 0.5,
-                background: "black"
-            }
-        });
-    }
 }
 
 function callDialog(){
     $(".tweet-box").addClass("hidden");
     $(".button-counter").addClass("hidden");
-    createTweetButton()
+    createTweetButton();
     $("#dialog").dialog({
         draggable: false,
         modal: true,
-        width: 600,
+        width: 700,
         close: CloseFunction,
         overlay: {
             opacity: 0.5,
