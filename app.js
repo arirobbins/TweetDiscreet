@@ -29,6 +29,7 @@ function apiCall(text){
 }
 
 function createTweetButton(){
+    //Function to create tweet button, part of the twitter JavaScript Factory functions
     twttr.widgets.createShareButton(
         '/',
         document.getElementById('dialog'),
@@ -56,6 +57,7 @@ function counter(){
 }
 
 function analyzeData(data){
+    //This function uses the data from the API call to determine the sentiment and create the html for the results
     var numSentences = data.sentence_list.length;
     var overallScore = "";
     var sentences = [];
@@ -119,6 +121,7 @@ function analyzeData(data){
 }
 
 function callDialog(){
+    //This function creates the modal dialog using jQuery UI
     $(".tweet-box").addClass("hidden");
     $(".button-counter").addClass("hidden");
     createTweetButton();
@@ -135,6 +138,7 @@ function callDialog(){
 }
 
 function CloseFunction(){
+    //This is the close function that is called from callDialog()
     $(".tweet-box").removeClass("hidden");
     $(".button-counter").removeClass("hidden");
     //createTweetButton();
@@ -143,22 +147,15 @@ function CloseFunction(){
 function main(){
     $("button#submit").on("click",function(event){
         event.preventDefault();
-        //alert($(".tweet-area").val());
         apiCall($(".tweet-area").val());
-        // createTweetButton();
     });
 
     $(".logo-click").on("click", function(event){
         $(".welcome").addClass("hidden");
-        $(".tweet-box").fadeIn("slow", function(){
-            // $(".tweet-box").removeClass("hidden");
-            // $(".submit").removeClass("hidden");
-        });
+        $(".tweet-box").fadeIn("slow", function(){});
         $("h1").show("drop", {direction: "left"}, "slow");
     });
     counter();
-
 }
-
 
 $(document).ready(main);
