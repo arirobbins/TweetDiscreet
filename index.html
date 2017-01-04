@@ -9,25 +9,31 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<div id="dialog" title="Analysis Results"></div>
+<div id="dialog" data-role="popup" title="Analysis Results"></div>
 <div class="flex-container">
+    <header class="flex-item header">
+        <h1 class="tweet-text hidden">tweet <span class="safe-text">Safe!</span></h1>
+    </header>
     <div class="welcome flex-item">
-        <p> Welcome to <span class="tweet-text">tweet </span><span class="safe-text">Safe!</span> an app that will analyze the sentiment of your tweets and advise you on how they will be received . . . all before you tweet! (click anywhere in the text to start)</p>
+        <p> Welcome to <span class="tweet-text logo-click">tweet </span><span class="safe-text logo-click">Safe!</span> an app that will analyze the sentiment of your tweets and advise you on how they will be received . . . all before you tweet! <br><br> (click the tweet Safe icon to begin)</p>
     </div><!--end flex-item-->
     <div class="tweet-box flex-item hidden">
-        <form action="">
-            <textarea class="tweet-area" rows="5" cols="50" placeholder="This is the text I'm going to tweet, will it be bad or will it be sweet?!"></textarea>
-            <br>
-            <!--<input type="submit" name="submit">-->
-            <button type="submit" id="submit">Evaluate</button>
-            <p class="js-counter"><span id="count">0</span>/140</p>
-            <div id="tweet-btn"></div>
+        <form class="tweet-box" action="">
+            <textarea class="tweet-area" rows="6" cols="50" placeholder="This is the text I'm going to tweet, will it be bad or will it be sweet?!"></textarea>
+            <!--<br><button type="submit" id="submit">Evaluate</button>-->
+            <!--<p class="js-counter"><span id="count">0</span>/140</p>-->
         </form>
+        <div class="button-counter">
+            <button class="ui-button" type="submit" id="submit">Evaluate</button>
+            <p class="js-counter"><span id="count">0</span>/140</p>
+        </div>
     </div><!--end flex-item-->
+    <div class="flex-item footer"></div>
 </div><!--end flex-container-->
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!--<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>-->
 <script src="app.js"></script>
 </body>
 </html>

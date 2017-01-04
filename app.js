@@ -10,15 +10,6 @@ var state = {
     results: ""
 };
 
-
-//State Functions
-
-
-
-//Render State Functions
-
-
-
 //Event Listeners
 function apiCall(text){
     var settings = $.ajax({
@@ -31,7 +22,6 @@ function apiCall(text){
             model: state.model
         },
         success: function(data){
-            console.log(data);
             state.results = data;
             analyzeData(data);
         }
@@ -43,17 +33,16 @@ function createTweetButton(){
         '/',
         document.getElementById('dialog'),
         {
-            text: $(".tweet-area").val()
+            text: $(".tweet-area").val(),
+            size: 'large'
         }
     );
 }
 
 
 function counter(){
-
     //This function handles the counter for the text box and sets
     //the color of the counter to red if the text length exceeds 140 characters
-
     $(".tweet-area").keyup(function(event){
        $("#count").text($(".tweet-area").val().length);
 
@@ -125,10 +114,43 @@ function analyzeData(data){
 
     element += "<p>The overall sentiment of your tweet is " + overallScore + "</p><p>We are " + data.confidence + "% confident of this analysis, it's up to you what to do next...</p>";
 
-    $(".tweet-box").addClass("hidden");
     $("#dialog").html(element);
+    callDialog();
+    // callDialogTest();
+    // callPopup();
+}
+
+function callPopup(){
+    $("#dialog").showPopup()
+}
+
+function callDialogTest(){
+    if ($(window).width() < 1224){
+        console.log("mobile");
+    }
+    else {
+        console.log("desktop");
+        $(".tweet-box").addClass("hidden");
+        $(".button-counter").addClass("hidden");
+        createTweetButton()
+        $("#dialog").dialog({
+            modal: true,
+            width: 600,
+            close: CloseFunction,
+            overlay: {
+                opacity: 0.5,
+                background: "black"
+            }
+        });
+    }
+}
+
+function callDialog(){
+    $(".tweet-box").addClass("hidden");
+    $(".button-counter").addClass("hidden");
     createTweetButton()
     $("#dialog").dialog({
+        draggable: false,
         modal: true,
         width: 600,
         close: CloseFunction,
@@ -141,6 +163,7 @@ function analyzeData(data){
 
 function CloseFunction(){
     $(".tweet-box").removeClass("hidden");
+    $(".button-counter").removeClass("hidden");
     //createTweetButton();
 }
 
@@ -152,10 +175,13 @@ function main(){
         // createTweetButton();
     });
 
-    $("div.welcome.flex-item").on("click", function(event){
-        // alert("test");
-        $(this).addClass("hidden");
-        $(".tweet-box").removeClass("hidden");
+    $(".logo-click").on("click", function(event){
+        $(".welcome").addClass("hidden");
+        $(".tweet-box").fadeIn("slow", function(){
+            // $(".tweet-box").removeClass("hidden");
+            // $(".submit").removeClass("hidden");
+        });
+        $("h1").show("drop", {direction: "left"}, "slow");
     });
     counter();
 

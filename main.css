@@ -1,3 +1,5 @@
+/*Everything (Constant Styles)*/
+
 * {
     box-sizing: border-box;
 }
@@ -7,28 +9,23 @@ body {
     color: white;
 }
 
-.hidden {
-    display: none;
-}
-
-.welcome {
-    font-family: "Indie Flower", cursive;
-    font-size: 40px;
+textarea {
+    resize: none;
+    overflow: auto;
+    width: 100%;
 }
 
 .tweet-text {
     font-family: "Baloo Thambi", cursive;
 }
 
-.tweet-box {
-    font-family: "Roboto", Arial;
-    font-size: 20px;
-    color: black;
+.safe-text {
+    font-family: "Black Ops One", Arial;
+    color: #515346;
 }
 
-textarea {
-    width: 100%;
-    /*border-radius: .5%;*/
+.hidden {
+    display: none;
 }
 
 .js-counter {
@@ -43,40 +40,146 @@ textarea {
     color: red;
 }
 
-.safe-text {
-    font-family: "Black Ops One", Arial;
-    color: #515346;
+#submit {
+    margin: 4px;
+    /*float: left;*/
 }
 
-.flex-container {
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /*align-content: center;*/
+        align-items: center;
+        height: 100vh;
+        /*border: 3px solid goldenrod;*/
+    }
+
+    .flex-item {
+        /*border: 1px solid black;*/
+        padding: 10px;
+        /*flex: 1 1 0px;*/
+    }
+
+    h1 {
+        margin: 0px;
+    }
+
+    .header, .footer {
+        min-height: 75px;
+        width: 100%;
+        /*flex: 1 1 0px;*/
+    }
+
+    .header {
+        order: 1;
+    }
+
+    .footer {
+        order: 3;
+    }
+
+    .welcome {
+        /*flex: 8 8 0px;*/
+        order: 2;
+        font-family: "Indie Flower", cursive;
+        font-size: 40px;
+        width: 50%;
+    }
+
+    .tweet-box {
+        /*flex: 8 8 0px;*/
+        order: 2;
+        font-family: "Roboto", Arial;
+        font-size: 20px;
+        color: black;
+        width: 50%;
+    }
+
+    textarea {
+        width: 200%;
+    }
+
+    .js-counter {
+        color: white;
+        font-size: 18px;
+        display: inline-block;
+        float: right;
+        margin: 4px;
+    }
+
+    .ui-button {
+        padding: 2px 5px;
+    }
 }
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 1223px) {
+    h1 {
+        margin: 10px 20px;
+        font-size: 70px;
+    }
 
-.flex-item {
-    margin: 10px;
-    width: 33.33%;
+    .flex-container {
+        font-size: 60px;
+        font-family: "Indie Flower", cursive;
+        align-items: center;
+    }
+
+    .welcome {
+        /*flex: 8 8 0px;*/
+        margin: 40px 50px;
+        padding-top: 100px;
+    }
+
+    .tweet-box {
+        /*flex: 8 8 0px;*/
+        font-family: "Roboto", Arial;
+        font-size: 50px;
+        color: black;
+        margin: 40px 50px;
+        padding-top: 100px;
+        height: 100%;
+    }
+
+    .js-counter {
+        font-size: 40px;
+        /*margin-right: inherit;*/
+    }
+
+    #submit {
+        /*margin-left: inherit;*/
+    }
+
+    .ui-button {
+        padding: 10px;
+    }
+
+    .button-counter {
+        margin-left: inherit;
+        margin-right: inherit;
+    }
+
+    #dialog {
+        /* position: absolute; */
+        /* height: auto; */
+        width: 80%;
+        /* top: 756.328px; */
+        /* left: 190px; */
+        /* z-index: 101; */
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 40px;
+    }
+
+    .ui-dialog-title {
+        float: left;
+        margin: .1em 0;
+        white-space: nowrap;
+        width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 40px;
+    }
 }
-
-/*.welcome {*/
-    /*text-align: center;*/
-    /*border: 1px solid black;*/
-    /*height: 65%;*/
-    /*width: 65%;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-    /*margin-top: 50%;*/
-    /*position: relative;*/
-/*}*/
-
-/*input {*/
-    /*height: 200px;*/
-    /*width: 400px;*/
-/*}*/
-
-/*.tweet-box {*/
-    /*height: 200px;*/
-    /*width: 400px;*/
-/*}*/
